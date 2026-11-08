@@ -10,7 +10,7 @@
   --color-sol: #ffd93b;
   --color-tinta: #0a1611;
 
-  --font-display: var(--font-cormorant), "Times New Roman", serif;
+  --font-display: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
 
   --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);

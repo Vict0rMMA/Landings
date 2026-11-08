@@ -60,7 +60,7 @@ export default function Moments() {
         <div className="flex shrink-0 flex-col justify-between lg:w-[34vw]">
           <p className="text-sm text-arena/60">Momentos</p>
           <div>
-            <h2 className="mt-6 font-display text-[clamp(2.8rem,4.4vw,5rem)] leading-[1] font-normal">
+            <h2 className="mt-6 font-display text-[clamp(2.8rem,4.4vw,5rem)] leading-[1.02] font-bold tracking-[-0.03em]">
               Un día entero
               <br />
               sin mirar el reloj
@@ -80,7 +80,7 @@ export default function Moments() {
               <Image src={m.src} alt={m.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover lg:scale-[1.25]" />
             </div>
             <figcaption data-moment-text className="flex items-baseline justify-between gap-6">
-              <span className="font-display text-2xl md:text-3xl">{m.title}</span>
+              <span className="font-display text-xl font-bold tracking-tight md:text-2xl">{m.title}</span>
               <span className="max-w-[24ch] text-right text-sm text-arena/65">{m.caption}</span>
             </figcaption>
           </figure>

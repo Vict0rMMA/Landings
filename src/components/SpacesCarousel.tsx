@@ -42,7 +42,7 @@ export default function SpacesCarousel() {
                   <p className="text-sm text-white/90">{s.text}</p>
                 </div>
               </div>
-              <h3 className="mt-4 font-display text-3xl">{s.title}</h3>
+              <h3 className="mt-4 font-display text-2xl font-bold tracking-tight md:text-3xl">{s.title}</h3>
               <p className="mt-1 text-sm text-tinta/70 lg:hidden">{s.text}</p>
             </article>
           </SwiperSlide>
@@ -50,7 +50,7 @@ export default function SpacesCarousel() {
       </Swiper>
 
       <div className="mt-10 flex items-center justify-between gap-6">
-        <p className="font-display text-xl tabular-nums" aria-live="polite">
+        <p className="font-display text-lg font-semibold tabular-nums" aria-live="polite">
           {String(index + 1).padStart(2, "0")} <span className="text-tinta/70">/ {String(spaces.length).padStart(2, "0")}</span>
         </p>
         <div className="flex gap-2">

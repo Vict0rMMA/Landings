@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="overflow-hidden bg-tinta text-arena">
       <div className="border-b border-arena/10 py-10 md:py-14" aria-hidden="true">
-        <div className="animate-marquee flex w-max whitespace-nowrap font-display text-[clamp(3.5rem,11vw,11rem)] leading-none italic">
+        <div className="animate-marquee flex w-max whitespace-nowrap font-display text-[clamp(3.5rem,11vw,11rem)] leading-none font-extrabold tracking-[-0.03em]">
           {Array.from({ length: 4 }, (_, i) => (
             <span key={i} className="px-[0.4em]">
               ¿{marquee}

@@ -45,7 +45,7 @@ export default function Stay() {
       <div className="mx-auto grid max-w-[1600px] grid-cols-1 items-center gap-16 md:grid-cols-12 md:gap-8">
         <div data-stay-copy className="md:col-span-5 lg:col-span-4">
           <p className="mb-6 text-sm text-tinta/70">Estadía</p>
-          <h2 className="font-display text-[clamp(2.6rem,5vw,5.2rem)] leading-[0.98] font-normal">
+          <h2 className="font-display text-[clamp(2.6rem,5vw,5.2rem)] leading-[1.02] font-bold tracking-[-0.03em]">
             {["Dormir con", "el mar", "de fondo"].map((l) => (
               <span key={l} className="block overflow-hidden pb-[0.06em]">
                 <span data-stay-line className="block">

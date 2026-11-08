@@ -82,9 +82,9 @@ export default function MenuOverlay({ open, onClose }: Props) {
                     e.preventDefault();
                     go(item.id);
                   }}
-                  className="group flex items-baseline gap-4 font-display text-[clamp(2.6rem,7.5vw,6.2rem)] leading-[1.02] font-normal transition-colors hover:text-sol focus-visible:text-sol"
+                  className="group flex items-baseline gap-4 font-display text-[clamp(2.6rem,7.5vw,6.2rem)] leading-[1.02] font-bold tracking-[-0.03em] transition-colors hover:text-sol focus-visible:text-sol"
                 >
-                  <span className="transition-transform duration-500 ease-[var(--ease-expo)] group-hover:translate-x-3 group-hover:italic">
+                  <span className="transition-transform duration-500 ease-[var(--ease-expo)] group-hover:translate-x-3">
                     {item.label}
                   </span>
                 </a>

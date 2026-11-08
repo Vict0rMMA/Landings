@@ -71,7 +71,7 @@ export default function Hero() {
 
       <div className="relative z-10 flex h-full flex-col justify-end pb-[max(2rem,env(safe-area-inset-bottom))] md:pb-10">
         <div data-band className="mb-8 origin-left bg-white py-3 text-tinta shadow-[0_20px_60px_-30px_rgba(0,0,0,.6)] md:mb-12 md:py-5">
-          <h1 className="flex justify-center overflow-hidden font-display text-[clamp(1.7rem,7.4vw,9rem)] leading-none font-medium tracking-[0.2em] whitespace-nowrap pl-[0.2em] md:tracking-[0.28em] md:pl-[0.28em]">
+          <h1 className="flex justify-center overflow-hidden font-display text-[clamp(1.9rem,8.4vw,9.5rem)] leading-none font-extrabold tracking-[0.04em] whitespace-nowrap">
             {title.split("").map((ch, i) => (
               <span key={i} data-char className="inline-block will-change-transform">
                 {ch === " " ? "\u00A0" : ch}
@@ -82,7 +82,7 @@ export default function Hero() {
 
         <div data-hero-content className="mx-auto grid w-full max-w-[1600px] gap-6 px-5 md:grid-cols-[1fr_auto] md:items-end md:px-10">
           <div>
-            <p data-hero-fade className="font-display text-3xl italic md:text-4xl">
+            <p data-hero-fade className="font-display text-2xl font-semibold tracking-tight md:text-3xl">
               {destination.region}
             </p>
             <p data-hero-fade className="mt-3 max-w-[34ch] text-[0.98rem] leading-relaxed text-white/85 md:text-lg">

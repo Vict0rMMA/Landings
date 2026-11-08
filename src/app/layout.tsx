@@ -2,18 +2,6 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const cormorant = localFont({
-  src: [
-    { path: "../fonts/cormorant-400-normal.woff2", weight: "400", style: "normal" },
-    { path: "../fonts/cormorant-400-italic.woff2", weight: "400", style: "italic" },
-    { path: "../fonts/cormorant-500-normal.woff2", weight: "500", style: "normal" },
-    { path: "../fonts/cormorant-500-italic.woff2", weight: "500", style: "italic" },
-  ],
-  variable: "--font-cormorant",
-  preload: false,
-  display: "swap",
-});
-
 const figtree = localFont({
   src: "../fonts/figtree.woff2",
   weight: "300 900",
@@ -50,7 +38,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={`${cormorant.variable} ${figtree.variable}`}>
+    <html lang="es" className={figtree.variable}>
       <body>
         <noscript>
           <style>{"[data-curtain]{display:none!important}"}</style>

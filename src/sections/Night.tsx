@@ -37,10 +37,10 @@ export default function Night() {
 
       <div className="relative z-10 mx-auto flex h-full max-w-[1600px] flex-col justify-end px-5 pb-14 md:px-10 md:pb-20">
         <div className="relative h-[clamp(3.6rem,10vw,10rem)] overflow-hidden">
-          <h2 data-label-day className="absolute inset-0 font-display text-[clamp(3.2rem,10vw,10rem)] leading-none italic motion-reduce:hidden">
+          <h2 data-label-day className="absolute inset-0 font-display text-[clamp(3.2rem,10vw,10rem)] leading-none font-extrabold tracking-[-0.03em] motion-reduce:hidden">
             De día, mar.
           </h2>
-          <h2 data-label-night className="absolute inset-0 font-display text-[clamp(3.2rem,10vw,10rem)] leading-none italic">
+          <h2 data-label-night className="absolute inset-0 font-display text-[clamp(3.2rem,10vw,10rem)] leading-none font-extrabold tracking-[-0.03em]">
             De noche, fogata.
           </h2>
         </div>

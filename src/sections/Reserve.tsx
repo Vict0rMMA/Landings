@@ -85,8 +85,8 @@ export default function Reserve() {
             </svg>
           </div>
 
-          <h2 className="mt-8 font-display text-[clamp(3rem,11vw,5.4rem)] leading-[0.9] font-medium">{destination.name}</h2>
-          <p className="mt-3 font-display text-2xl italic">{destination.region}</p>
+          <h2 className="mt-8 font-display text-[clamp(3rem,11vw,5.4rem)] leading-[0.95] font-extrabold tracking-[-0.03em]">{destination.name}</h2>
+          <p className="mt-3 font-display text-xl font-semibold">{destination.region}</p>
 
           <div data-perforation className="my-9 border-t-2 border-dashed border-tinta/35" aria-hidden="true" />
 

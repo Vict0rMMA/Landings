@@ -14,7 +14,7 @@ export default function Spaces() {
         <div className="mb-14 flex flex-col justify-between gap-6 md:mb-20 md:flex-row md:items-end">
           <div>
             <p className="mb-6 text-sm text-tinta/70">Espacios</p>
-            <h2 className="max-w-[14ch] font-display text-[clamp(2.6rem,5vw,5.2rem)] leading-[0.98] font-normal">Todo lo que te espera allá</h2>
+            <h2 className="max-w-[14ch] font-display text-[clamp(2.6rem,5vw,5.2rem)] leading-[1.02] font-bold tracking-[-0.03em]">Todo lo que te espera allá</h2>
           </div>
           <p className="max-w-[34ch] leading-relaxed text-tinta/70">Desliza para recorrer la playa, el mirador, las habitaciones y la fogata.</p>
         </div>

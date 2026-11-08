@@ -36,7 +36,7 @@ export default function Intro() {
     <section ref={root} id="lugar" className="relative bg-arena px-5 pt-28 pb-24 md:px-10 md:pt-44 md:pb-40">
       <div className="mx-auto max-w-[1600px]">
         <p className="mb-8 text-sm text-tinta/70 md:mb-12">El lugar</p>
-        <h2 data-statement className="max-w-[22ch] font-display text-[clamp(2.1rem,5.4vw,5.6rem)] leading-[1.04] font-normal text-tinta">
+        <h2 data-statement className="max-w-[22ch] font-display text-[clamp(2.1rem,5.4vw,5.6rem)] leading-[1.08] font-bold tracking-[-0.03em] text-tinta">
           {statement.split(" ").map((w, i) => (
             <span key={i} data-word className="inline-block whitespace-pre">
               {w}{" "}
@@ -62,14 +62,14 @@ export default function Intro() {
             {pillars.map((p) => (
               <div key={p.title} data-pillar>
                 <div data-rule className="mb-5 h-px bg-tinta/20" />
-                <h3 className="font-display text-3xl font-medium md:text-4xl">{p.title}</h3>
+                <h3 className="font-display text-2xl font-bold tracking-tight md:text-3xl">{p.title}</h3>
                 <p className="mt-3 max-w-[40ch] leading-relaxed text-tinta/75">{p.text}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <blockquote data-quote className="mt-32 text-center font-display text-[clamp(2.6rem,8vw,8rem)] leading-none italic md:mt-48">
+        <blockquote data-quote className="mt-32 text-center font-display text-[clamp(2.6rem,8vw,8rem)] leading-none font-extrabold tracking-[-0.03em] md:mt-48">
           {destination.quote.split(" ").map((w, i) => (
             <span key={i} className="inline-block overflow-hidden pb-[0.12em] align-top">
               <span data-quote-word className="inline-block">{w}&nbsp;</span>
