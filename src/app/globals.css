@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --color-selva: #0f2a1f;
+  --color-selva-2: #1a3d2f;
+  --color-turquesa: #3cc7bf;
+  --color-arena: #efe7d8;
+  --color-arena-2: #e1d4bd;
+  --color-azul: #17a6e4;
+  --color-sol: #ffd93b;
+  --color-tinta: #0a1611;
+
+  --font-display: var(--font-cormorant), "Times New Roman", serif;
+  --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
+
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.lenis,
+html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: clip; }
+
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: var(--color-arena);
+  color: var(--color-tinta);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+::selection { background: var(--color-sol); color: var(--color-tinta); }
+:focus-visible { outline: 2px solid var(--color-azul); outline-offset: 3px; border-radius: 2px; }
+
+/* Grano fotográfico: disimula compresión de video y da textura editorial */
+.grain { isolation: isolate; }
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.18;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Ticket con muescas laterales */
+.ticket {
+  --notch: 20px;
+  --notch-y: 64%;
+  -webkit-mask:
+    radial-gradient(circle var(--notch) at 0 var(--notch-y), #0000 98%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle var(--notch) at 100% var(--notch-y), #0000 98%, #000) right / 51% 100% no-repeat;
+  mask:
+    radial-gradient(circle var(--notch) at 0 var(--notch-y), #0000 98%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle var(--notch) at 100% var(--notch-y), #0000 98%, #000) right / 51% 100% no-repeat;
+}
+
+@keyframes marquee { to { transform: translate3d(-50%, 0, 0); } }
+@keyframes spin { to { transform: rotate(1turn); } }
+.animate-marquee { animation: marquee 32s linear infinite; }
+.animate-spin-slow { animation: spin 22s linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee, .animate-spin-slow { animation: none; }
+  [data-curtain] { display: none !important; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
+}

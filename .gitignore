@@ -1,0 +1,8 @@
+node_modules
+.next
+out
+.env*
+next-env.d.ts
+/fotos-espacios.zip
+/*.mp4
+*.tsbuildinfo
