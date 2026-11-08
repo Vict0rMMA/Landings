@@ -12,12 +12,15 @@ export default function Night() {
       const mm = gsap.matchMedia();
       mm.add(MOTION_OK, () => {
         // Del día a la noche: la fogata se abre en círculo sobre la playa.
-        gsap
-          .timeline({ scrollTrigger: { trigger: root.current, start: "top top", end: "+=160%", pin: true, scrub: 1 } })
-          .fromTo("[data-night]", { clipPath: "circle(0% at 50% 62%)" }, { clipPath: "circle(80% at 50% 62%)", ease: "power2.inOut", duration: 1 }, 0)
-          .fromTo("[data-night] img", { scale: 1.35 }, { scale: 1, ease: "none", duration: 1 }, 0)
-          .to("[data-day] img", { scale: 1.15, ease: "none", duration: 1 }, 0)
-          .to("[data-label-day]", { yPercent: -100, autoAlpha: 0, ease: "power2.in", duration: 0.3 }, 0.1)
+        const tl = gsap
+          .timeline({ scrollTrigger: { trigger: root.current, start: "top top", end: "+=160%", pin: true, anticipatePin: 1, scrub: 1 } })
+          .fromTo("[data-night]", { clipPath: "circle(0% at 50% 62%)" }, { clipPath: "circle(80% at 50% 62%)", ease: "power2.inOut", duration: 1 }, 0);
+        // El zoom de dos fotos a pantalla completa es lo más pesado: solo en desktop.
+        if (window.matchMedia("(min-width: 1024px)").matches) {
+          tl.fromTo("[data-night] img", { scale: 1.35 }, { scale: 1, ease: "none", duration: 1 }, 0)
+            .to("[data-day] img", { scale: 1.15, ease: "none", duration: 1 }, 0);
+        }
+        tl.to("[data-label-day]", { yPercent: -100, autoAlpha: 0, ease: "power2.in", duration: 0.3 }, 0.1)
           .fromTo("[data-label-night]", { yPercent: 100, autoAlpha: 0 }, { yPercent: 0, autoAlpha: 1, ease: "power2.out", duration: 0.3 }, 0.5);
       });
     },
@@ -36,11 +39,11 @@ export default function Night() {
       </div>
 
       <div className="relative z-10 mx-auto flex h-full max-w-[1600px] flex-col justify-end px-5 pb-14 md:px-10 md:pb-20">
-        <div className="relative h-[clamp(3.6rem,10vw,10rem)] overflow-hidden">
-          <h2 data-label-day className="absolute inset-0 font-display text-[clamp(3.2rem,10vw,10rem)] leading-none font-extrabold tracking-[-0.03em] motion-reduce:hidden">
+        <div className="relative h-[1.25em] overflow-hidden font-display text-[clamp(2.1rem,9vw,10rem)] leading-none font-extrabold tracking-[-0.03em]">
+          <h2 data-label-day className="absolute inset-0 whitespace-nowrap motion-reduce:hidden">
             De día, mar.
           </h2>
-          <h2 data-label-night className="absolute inset-0 font-display text-[clamp(3.2rem,10vw,10rem)] leading-none font-extrabold tracking-[-0.03em]">
+          <h2 data-label-night className="absolute inset-0 whitespace-nowrap">
             De noche, fogata.
           </h2>
         </div>

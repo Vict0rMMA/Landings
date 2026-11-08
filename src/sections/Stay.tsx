@@ -47,7 +47,7 @@ export default function Stay() {
           <p className="mb-6 text-sm text-tinta/70">Estadía</p>
           <h2 className="font-display text-[clamp(2.6rem,5vw,5.2rem)] leading-[1.02] font-bold tracking-[-0.03em]">
             {["Dormir con", "el mar", "de fondo"].map((l) => (
-              <span key={l} className="block overflow-hidden pb-[0.06em]">
+              <span key={l} className="block overflow-hidden pb-[0.16em] -mb-[0.1em]">
                 <span data-stay-line className="block">
                   {l}
                 </span>

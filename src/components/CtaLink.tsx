@@ -24,7 +24,7 @@ export default function CtaLink({ href, children, icon, variant = "light", class
     <a
       href={href}
       {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-      className={`group relative inline-flex min-h-12 items-center gap-3 overflow-hidden rounded-full px-6 py-3 text-[0.95rem] font-medium ${s.base} ${className}`}
+      className={`group relative inline-flex min-h-12 items-center gap-3 overflow-hidden rounded-full px-6 py-3 text-[0.95rem] font-semibold transition-transform duration-150 active:scale-[0.97] ${s.base} ${className}`}
     >
       <span
         aria-hidden="true"

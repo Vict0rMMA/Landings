@@ -71,7 +71,7 @@ export default function Intro() {
 
         <blockquote data-quote className="mt-32 text-center font-display text-[clamp(2.6rem,8vw,8rem)] leading-none font-extrabold tracking-[-0.03em] md:mt-48">
           {destination.quote.split(" ").map((w, i) => (
-            <span key={i} className="inline-block overflow-hidden pb-[0.12em] align-top">
+            <span key={i} className="inline-block overflow-hidden pb-[0.2em] align-top">
               <span data-quote-word className="inline-block">{w}&nbsp;</span>
             </span>
           ))}

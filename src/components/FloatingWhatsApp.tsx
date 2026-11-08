@@ -27,7 +27,7 @@ export default function FloatingWhatsApp() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Escribir a Where por WhatsApp"
-      className="fixed right-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-40 grid size-14 place-items-center rounded-full bg-[#25d366] text-white shadow-[0_10px_30px_-8px_rgba(10,22,17,.55)] transition-transform hover:scale-110 md:right-8 md:bottom-8"
+      className="fixed right-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-40 grid size-14 place-items-center rounded-full bg-[#25d366] text-white shadow-[0_10px_30px_-8px_rgba(10,22,17,.55)] transition-transform hover:scale-110 active:scale-95 md:right-8 md:bottom-8"
     >
       <WhatsAppIcon className="size-7" />
     </a>

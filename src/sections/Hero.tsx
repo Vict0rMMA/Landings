@@ -21,15 +21,17 @@ export default function Hero() {
       const mm = gsap.matchMedia();
       mm.add(MOTION_OK, () => {
         lock();
+        // Intro corta: el scroll se libera apenas sube la cortina, no al final.
         gsap
           .timeline({ defaults: { ease: "expo.out" }, onComplete: unlock })
-          .from("[data-curtain-logo]", { yPercent: 120, duration: 1 })
-          .to("[data-curtain-logo]", { yPercent: -120, duration: 0.7, ease: "expo.in" }, "+=0.3")
-          .to("[data-curtain]", { yPercent: -100, duration: 1.2, ease: "expo.inOut" }, "-=0.1")
-          .from("[data-hero-video]", { scale: 1.3, duration: 2.4 }, "<0.1")
-          .from("[data-band]", { scaleX: 0, duration: 1.4, ease: "expo.inOut" }, "-=1.9")
-          .from("[data-char]", { yPercent: 130, rotate: 6, duration: 1.2, stagger: 0.035 }, "-=0.7")
-          .from("[data-hero-fade]", { y: 28, autoAlpha: 0, duration: 1.1, stagger: 0.1 }, "-=0.9")
+          .from("[data-curtain-logo]", { yPercent: 120, duration: 0.7 })
+          .to("[data-curtain-logo]", { yPercent: -120, duration: 0.5, ease: "expo.in" }, "+=0.15")
+          .to("[data-curtain]", { yPercent: -100, duration: 0.9, ease: "expo.inOut" }, "-=0.1")
+          .add(unlock, "-=0.3")
+          .from("[data-hero-video]", { scale: 1.3, duration: 2 }, "<0.1")
+          .from("[data-band]", { scaleX: 0, duration: 1.1, ease: "expo.inOut" }, "-=1.7")
+          .from("[data-char]", { yPercent: 130, rotate: 6, duration: 1, stagger: 0.025 }, "-=0.6")
+          .from("[data-hero-fade]", { y: 28, autoAlpha: 0, duration: 0.9, stagger: 0.08 }, "-=0.8")
           .set("[data-curtain]", { display: "none" });
 
         gsap
@@ -73,7 +75,7 @@ export default function Hero() {
         <div data-band className="mb-8 origin-left bg-white py-3 text-tinta shadow-[0_20px_60px_-30px_rgba(0,0,0,.6)] md:mb-12 md:py-5">
           <h1 className="flex justify-center overflow-hidden font-display text-[clamp(1.9rem,8.4vw,9.5rem)] leading-none font-extrabold tracking-[0.04em] whitespace-nowrap">
             {title.split("").map((ch, i) => (
-              <span key={i} data-char className="inline-block will-change-transform">
+              <span key={i} data-char className="inline-block">
                 {ch === " " ? "\u00A0" : ch}
               </span>
             ))}
